@@ -1,4 +1,7 @@
-// Core Module
+// 🌍 Load environment variables
+require('dotenv').config();
+
+// Core Modules
 const path = require('path');
 
 // External Modules
@@ -8,8 +11,11 @@ const MongoStore = require('connect-mongo');
 const mongoose = require('mongoose');
 const multer = require('multer');
 
-// MongoDB URI
-const DB_PATH = "mongodb+srv://Ravitariya:riyariya@cluster0.tp1hyif.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// 💾 Environment Variables
+const DB_PATH = process.env.MONGO_URI;
+const PORT = process.env.PORT || 3003;
+const SESSION_SECRET = process.env.SESSION_SECRET;
+const MONGO_DB_NAME = process.env.MONGO_DB_NAME || 'airbnb'; // Optional fallback
 
 // Local Modules
 const storeRouter = require("./routes/storeRouter");
@@ -61,17 +67,17 @@ app.use("/uploads", express.static(path.join(rootDir, 'uploads')));
 app.use("/host/uploads", express.static(path.join(rootDir, 'uploads')));
 app.use("/homes/uploads", express.static(path.join(rootDir, 'uploads')));
 
-// 🔐 Session Setup (connect-mongo)
+// 🔐 Session Setup
 app.use(session({
-  secret: "KnowledgeGate AI with Complete Coding",
+  secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
   store: MongoStore.create({
     mongoUrl: DB_PATH,
-    dbName: 'airbnb',
+    dbName: MONGO_DB_NAME,
     collectionName: 'sessions'
   }),
-  cookie: { maxAge: 1000 * 60 * 60 * 24 } // 1 day
+  cookie: { maxAge: 1000 * 60 * 60 * 24 }
 }));
 
 // 🔐 LoggedIn Middleware
@@ -96,7 +102,6 @@ app.use("/host", hostRouter);
 app.use(errorsController.pageNotFound);
 
 // 🌐 Connect to Mongo & Start Server
-const PORT = 3003;
 mongoose.connect(DB_PATH)
   .then(() => {
     console.log('✅ Connected to Mongo');
