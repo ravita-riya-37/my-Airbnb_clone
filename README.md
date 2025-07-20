@@ -15,13 +15,11 @@ This is a full-stack Airbnb clone project built using the MERN stack (MongoDB, E
 - Tailwind CSS (Styling)
 
 ## How to Run
+
 ```bash
-# Backend
-cd server
+# Install dependencies
 npm install
+
+# Start the project
 npm start
 
-# Frontend
-cd client
-npm install
-npm start
