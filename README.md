@@ -1,120 +1,93 @@
-🏠 Airbnb Clone
+# 🏠 Airbnb Clone (Full Stack Web Application)
 
-A full-stack Airbnb Clone web application built using Node.js MVC architecture.
-This project demonstrates real-world backend development with authentication, role-based access, and dynamic page rendering using EJS.
+A full-stack **Airbnb Clone** that replicates core functionalities of the Airbnb platform, including user authentication, host listings, and guest browsing experience.  
+This project is built to demonstrate **real-world web development skills**, clean UI, and structured backend logic.
 
-✨ Features
+---
 
-User authentication (Sign Up & Login)
+## 🚀 Features
 
-Role-based access (Guest & Host)
+### 👤 Authentication
+- User Sign Up & Login
+- Secure authentication flow
+- Separate flows for **Host** and **Guest**
 
-Browse property listings
+### 🏠 Hosting Features
+- Host dashboard
+- Add & manage property listings
+- View hosted properties
 
-Host dashboard for managing listings
+### 🧳 Guest Features
+- Browse available properties
+- View property details
+- User-friendly guest experience
 
-Clean and responsive UI
+### 🎨 UI / UX
+- Clean & responsive design
+- Modern layout inspired by Airbnb
+- Smooth navigation between pages
 
-MongoDB Atlas integration
+---
 
-Proper MVC folder structure
+## 🛠️ Tech Stack
+- **Frontend:** React.js  
+- **Styling:** CSS / Tailwind CSS  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
+- **Authentication:** JWT / Session based auth  
+- **Tooling:** Git, GitHub  
 
-🛠️ Tech Stack
+---
 
-Backend: Node.js, Express.js
+## 📂 Project Structure
+src/
+│── components/ # Reusable UI components
+│── pages/ # Home, Login, Signup, Host, Guest
+│── routes/ # Application routes
+│── services/ # API & business logic
+│── utils/ # Helper functions
+│── assets/ # Images & static files
 
-Frontend: EJS, HTML, CSS
+yaml
+Copy code
 
-Database: MongoDB (Atlas)
+---
 
-Styling: Tailwind CSS
+## 📸 Screenshots
 
-Architecture: MVC (Model–View–Controller)
+### 🏠 Home Page
+![Home Page](screenshots/home_page.PNG)
 
-📁 Project Structure
-my-Airbnb_clone/
-│
-├── controllers/
-├── models/
-├── routes/
-├── views/
-├── public/
-├── screenshots/
-│   ├── home_page.PNG
-│   ├── login_page.PNG
-│   ├── SignUp_page.PNG
-│   ├── guest_page.PNG
-│   └── host_page.PNG
-├── app.js
-├── package.json
-└── README.md
+### 🔐 Login Page
+![Login Page](screenshots/login_page.PNG)
 
-📸 Screenshots
-🏡 Home Page
+### 📝 Sign Up Page
+![Sign Up Page](screenshots/SignUp_page.PNG)
 
-🔐 Login Page
+### 🧳 Guest Page
+![Guest Page](screenshots/guest_page.PNG)
 
-📝 Sign Up Page
+### 🏡 Host Page
+![Host Page](screenshots/host_page.PNG)
 
-👤 Guest Dashboard
+---
 
-🏠 Host Dashboard
-
-⚙️ How to Run Locally
-
-Clone the repository
-
-git clone https://github.com/your-username/my-Airbnb_clone.git
-cd my-Airbnb_clone
-
-
+## 📌 How to Run Locally
+1. Clone the repository  
+```bash
+git clone <repo-link>
 Install dependencies
 
+bash
+Copy code
 npm install
+Start the development server
 
-
-Create a .env file and add:
-
-MONGO_URI=your_mongodb_connection_string
-
-
-Start the application
-
+bash
+Copy code
 npm start
-
-
 Open in browser
 
+arduino
+Copy code
 http://localhost:3000
-
-🎯 Purpose of This Project
-
-This project was built to:
-
-Practice Node.js MVC architecture
-
-Work with MongoDB Atlas
-
-Implement authentication & authorization
-
-Build a resume-ready full-stack project
-
-🚀 Future Improvements
-
-Booking & reservation system
-
-Image upload using Cloudinary
-
-Payment integration
-
-Deployment on cloud platform
-
-⭐ Project Status
-
-✔️ Completed
-🔧 Enhancements planned
-
-💼 Resume Note
-
-Airbnb Clone – Node.js MVC Project
-Developed a full-stack Airbnb-style application using Node.js, Express, MongoDB, and EJS with role-based authentication and clean MVC architecture.
